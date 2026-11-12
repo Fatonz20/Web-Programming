@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>Categories</title>
+</head>
+<body>
+
+<h1>Categories Page</h1>
+<a th:href="@{/hello}">Home</a>
+
+<h2>
+    <th:block th:text="'Hello ' + ${ipAddress}"/>
+</h2>
+<br>
+<p>
+    <th:block th:text="'User Agent: ' + ${userAgent}"/>
+</p>
+
+<ul>
+    <li th:each="category: ${categories}" th:text="${category.name} + ' (' +  ${category.description} + ')'"></li>
+</ul>
+</body>
+</html>
